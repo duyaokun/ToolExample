@@ -19,6 +19,9 @@ public class ToolExampleEditor : ModuleRules
             }
 		);
 
+		PCHUsage = ModuleRules.PCHUsageMode.NoSharedPCHs;
+		PrivatePCHHeaderFile = "ToolExampleEditor.h";
+
 		PublicDependencyModuleNames.AddRange(
 			new string[] {
 				"AnimGraph",
