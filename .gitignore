@@ -72,3 +72,10 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+.vscode/
+.idea/
+*.code-workspace
+Config/DefaultEditorUserSettings.ini
+.vsconfig
+Config/DefaultInput.ini
