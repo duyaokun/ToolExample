@@ -9,13 +9,13 @@
 class ExampleEditorCommands : public TCommands<ExampleEditorCommands>
 {
 public:
-	ExampleEditorCommands() : TCommands <ExampleEditorCommands>
+	ExampleEditorCommands() : TCommands<ExampleEditorCommands>
 		(
 			"ExampleEditor",	// Context name for fast lookup
 			FText::FromString(TEXT("Example Editor")),	// context name for displaying
 			NAME_None,	// Parent
-			FEditorStyle::GetStyleSetName()
-			)
+			FAppStyle::GetAppStyleSetName()
+		)
 	{
 	}
 
@@ -58,7 +58,7 @@ void FExampleEdMode::MapCommands()
 void FExampleEdMode::Enter()
 {
 	FEdMode::Enter();
-	
+
 	if (!Toolkit.IsValid())
 	{
 		Toolkit = MakeShareable(new FExampleEdModeToolkit);
@@ -76,7 +76,7 @@ void FExampleEdMode::Exit()
 {
 	FToolkitManager::Get().CloseToolkit(Toolkit.ToSharedRef());
 	Toolkit.Reset();
-	
+
 	FEdMode::Exit();
 }
 
@@ -150,7 +150,7 @@ bool FExampleEdMode::InputDelta(FEditorViewportClient* InViewportClient, FViewpo
 	{
 		return false;
 	}
-	
+
 	if (HasValidSelection())
 	{
 		if (!InDrag.IsZero())
@@ -187,8 +187,8 @@ TSharedPtr<SWidget> FExampleEdMode::GenerateContextMenu(FEditorViewportClient* I
 		// add label for point index
 		TSharedRef<SWidget> LabelWidget =
 			SNew(STextBlock)
-			.Text(FText::FromString(FString::FromInt(currentSelectedIndex)))
-			.ColorAndOpacity(FLinearColor::Green);
+				.Text(FText::FromString(FString::FromInt(currentSelectedIndex)))
+				.ColorAndOpacity(FLinearColor::Green);
 		MenuBuilder.AddWidget(LabelWidget, FText::FromString(TEXT("Point Index: ")));
 		MenuBuilder.AddMenuSeparator();
 		// add delete point entry

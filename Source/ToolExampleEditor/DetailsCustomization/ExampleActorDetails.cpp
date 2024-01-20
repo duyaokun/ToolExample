@@ -1,7 +1,10 @@
 #include "ExampleActorDetails.h"
-#include "ToolExampleEditor/ToolExampleEditor.h"
-#include "ToolExample/DetailsCustomization/ExampleActor.h"
+#include "DetailCategoryBuilder.h"
+#include "DetailLayoutBuilder.h"
+#include "DetailWidgetRow.h"
 #include "EditorStyleSet.h"
+#include "ToolExample/DetailsCustomization/ExampleActor.h"
+#include "ToolExampleEditor/ToolExampleEditor.h"
 
 TSharedRef<IDetailCustomization> FExampleActorDetails::MakeInstance()
 {
@@ -34,7 +37,7 @@ void FExampleActorDetails::CustomizeDetails(IDetailLayoutBuilder& DetailLayout)
 					.VAlign(VAlign_Center)
 					[
 						SNew(SCheckBox)
-						.Style(FEditorStyle::Get(), "RadioButton")
+						.Style(FAppStyle::Get(), "RadioButton")
 						.IsChecked(this, &FExampleActorDetails::IsModeRadioChecked, actor, 1)
 						.OnCheckStateChanged(this, &FExampleActorDetails::OnModeRadioChanged, actor, 1)
 						[
@@ -47,7 +50,7 @@ void FExampleActorDetails::CustomizeDetails(IDetailLayoutBuilder& DetailLayout)
 					.VAlign(VAlign_Center)
 					[
 						SNew(SCheckBox)
-						.Style(FEditorStyle::Get(), "RadioButton")
+						.Style(FAppStyle::Get(), "RadioButton")
 						.IsChecked(this, &FExampleActorDetails::IsModeRadioChecked, actor, 2)
 						.OnCheckStateChanged(this, &FExampleActorDetails::OnModeRadioChanged, actor, 2)
 						[

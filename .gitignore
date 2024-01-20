@@ -79,3 +79,4 @@ DerivedDataCache/*
 Config/DefaultEditorUserSettings.ini
 .vsconfig
 Config/DefaultInput.ini
+.obsidian/

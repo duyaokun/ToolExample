@@ -14,7 +14,7 @@ public:
 		TEXT("MenuTool"), // Context name for fast lookup
 		FText::FromString("Example Menu tool"), // Context name for displaying
 		NAME_None,	 // No parent context
-		FEditorStyle::GetStyleSetName() // Icon Style Set
+		FAppStyle::GetAppStyleSetName() // Icon Style Set
 		)
 	{
 	}
@@ -24,7 +24,6 @@ public:
 		UI_COMMAND(MenuCommand1, "Menu Command 1", "Test Menu Command 1.", EUserInterfaceActionType::Button, FInputGesture());
 		UI_COMMAND(MenuCommand2, "Menu Command 2", "Test Menu Command 2.", EUserInterfaceActionType::Button, FInputGesture());
 		UI_COMMAND(MenuCommand3, "Menu Command 3", "Test Menu Command 3.", EUserInterfaceActionType::Button, FInputGesture());
-
 	}
 
 public:
@@ -53,7 +52,6 @@ void MenuTool::MapCommands()
 		FCanExecuteAction());
 }
 
-
 void MenuTool::OnStartupModule()
 {
 	CommandList = MakeShareable(new FUICommandList);
@@ -69,7 +67,6 @@ void MenuTool::OnShutdownModule()
 {
 	MenuToolCommands::Unregister();
 }
-
 
 void MenuTool::MakeMenuEntry(FMenuBuilder &menuBuilder)
 {
@@ -108,7 +105,7 @@ void MenuTool::MakeMenuEntry(FMenuBuilder &menuBuilder)
 void MenuTool::MakeSubMenu(FMenuBuilder &menuBuilder)
 {
 	menuBuilder.AddMenuEntry(MenuToolCommands::Get().MenuCommand2);
-	menuBuilder.AddMenuEntry(MenuToolCommands::Get().MenuCommand3);	
+	menuBuilder.AddMenuEntry(MenuToolCommands::Get().MenuCommand3);
 }
 
 void MenuTool::MenuCommand1()

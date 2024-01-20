@@ -3,16 +3,16 @@
 #pragma once
 
 #include "UnrealEd.h"
-//#include "Engine.h"
-#include "SlateBasics.h"
 #include "SlateExtras.h"
-//#include "Internationalization.h"
-//#include "MultiBoxExtender.h"
 #include "Editor/LevelEditor/Public/LevelEditor.h"
-#include "Editor/PropertyEditor/Public/PropertyEditing.h"
 #include "IAssetTypeActions.h"
 
 #include "IExampleModuleInterface.h"
+
+#if ENGINE_MAJOR_VERSION < 5
+typedef FEditorStyle FAppStyle;
+#define GetAppStyleSetName GetStyleSetName
+#endif
 
 class FToolExampleEditor : public IExampleModuleInterface
 {

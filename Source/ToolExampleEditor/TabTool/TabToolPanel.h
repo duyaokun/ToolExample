@@ -8,7 +8,8 @@ class TabToolPanel : public SCompoundWidget
 {
 
 	SLATE_BEGIN_ARGS(TabToolPanel)
-	{}
+	{
+	}
 
 	SLATE_ARGUMENT(TWeakPtr<class TabTool>, Tool)
 	SLATE_END_ARGS()
