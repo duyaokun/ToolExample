@@ -1,6 +1,7 @@
 #include "ToolExampleEditor/ToolExampleEditor.h"
-#include "Editor/UnrealEd/Public/Toolkits/ToolkitManager.h"
+#include "Toolkits/ToolkitManager.h"
 #include "ScopedTransaction.h"
+#include "EditorStyleSet.h"
 #include "ExampleEdModeToolkit.h"
 #include "ExampleEdMode.h"
 #include "EditorMode/ExampleTargetPoint.h"

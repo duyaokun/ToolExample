@@ -6,55 +6,56 @@ using System.IO;
 public class ToolExampleEditor : ModuleRules
 {
 	public ToolExampleEditor(ReadOnlyTargetRules Target) : base(Target)
-    {
-        PublicIncludePaths.AddRange(
-            new string[] {
+	{
+		PublicIncludePaths.AddRange(
+			new string[] {
 					// ... add public include paths required here ...
-            }
-            );
+				}
+			);
 
-        PrivateIncludePaths.AddRange(
-            new string[] {
+		PrivateIncludePaths.AddRange(
+			new string[] {
                 // ... add other private include paths required here ...
             }
-            );
+		);
 
-        PublicDependencyModuleNames.AddRange(
-            new string[] {
-                "Core",
-                "Engine",
-                "CoreUObject",
-                "InputCore",
-                "LevelEditor",
-                "Slate",
-                "EditorStyle",
-                "AssetTools",
-                "EditorWidgets",
-                "UnrealEd",
-                "BlueprintGraph",
-                "AnimGraph",
-                "ComponentVisualizers",
-                "ToolExample"
-        }
-        );
+		PublicDependencyModuleNames.AddRange(
+			new string[] {
+				"AnimGraph",
+				"AssetTools",
+				"BlueprintGraph",
+				"ComponentVisualizers",
+				"Core",
+				"CoreUObject",
+				"EditorStyle",
+				"EditorWidgets",
+				"Engine",
+				"InputCore",
+				"LevelEditor",
+				"Slate",
+				"ToolExample",
+				"UnrealEd",
+			}
+		);
 
-        PrivateDependencyModuleNames.AddRange(
-            new string[]
-            {
-                "Core",
-                "CoreUObject",
-                "Engine",
-                "AppFramework",
-                "SlateCore",
-                "AnimGraph",
-                "UnrealEd",
-                "KismetWidgets",
-                "MainFrame",
-                "PropertyEditor",
-                "ComponentVisualizers",
-                "ToolExample"
-                // ... add private dependencies that you statically link with here ...
-            }
-            );
-    }
+		if (Target.Version.MajorVersion > 4)
+		{
+			PrivateDependencyModuleNames.AddRange(
+				new string[] {
+					"EditorFramework",
+				}
+			);
+		}
+
+		PrivateDependencyModuleNames.AddRange(
+			new string[] {
+				"AppFramework",
+				"KismetWidgets",
+				"MainFrame",
+				"PropertyEditor",
+				"SlateCore",
+			// ... add private dependencies that you statically link with here ...
+			}
+		);
+	}
 }

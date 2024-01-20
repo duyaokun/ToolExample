@@ -1,6 +1,6 @@
 #include "ToolExampleEditor/ToolExampleEditor.h"
 #include "MenuTool.h"
-
+#include "EditorStyleSet.h"
 #include "ScopedTransaction.h"
 
 #define LOCTEXT_NAMESPACE "MenuTool"
