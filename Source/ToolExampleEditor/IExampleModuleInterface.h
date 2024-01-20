@@ -6,6 +6,7 @@
 class IExampleModuleListenerInterface
 {
 public:
+	virtual ~IExampleModuleListenerInterface() {}
 	virtual void OnStartupModule() {};
 	virtual void OnShutdownModule() {};
 };

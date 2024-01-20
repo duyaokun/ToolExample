@@ -1,5 +1,5 @@
 #pragma once
-
+#include "GameFramework/Actor.h"
 #include "ExampleActor.generated.h"
 
 UCLASS()

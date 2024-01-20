@@ -31,8 +31,13 @@ void ExampleEdModeTool::RegisterStyleSet()
 	}
 
 	StyleSet = MakeShareable(new FSlateStyleSet("ExampleEdModeToolStyle"));
+#if ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION < 18 
 	StyleSet->SetContentRoot(FPaths::GameDir() / TEXT("Content/EditorResources"));
 	StyleSet->SetCoreContentRoot(FPaths::GameDir() / TEXT("Content/EditorResources"));
+#else
+	StyleSet->SetContentRoot(FPaths::ProjectDir() / TEXT("Content/EditorResources"));
+	StyleSet->SetCoreContentRoot(FPaths::ProjectDir() / TEXT("Content/EditorResources"));
+#endif
 
 	// Spline editor
 	{
