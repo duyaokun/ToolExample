@@ -1,8 +1,7 @@
-
-#include "ToolExampleEditor/ToolExampleEditor.h"
 #include "ExampleActorDetails.h"
+#include "ToolExampleEditor/ToolExampleEditor.h"
+#include "ToolExample/DetailsCustomization/ExampleActor.h"
 #include "EditorStyleSet.h"
-#include "DetailsCustomization/ExampleActor.h"
 
 TSharedRef<IDetailCustomization> FExampleActorDetails::MakeInstance()
 {

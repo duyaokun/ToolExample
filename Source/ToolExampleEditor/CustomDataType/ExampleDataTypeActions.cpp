@@ -1,6 +1,6 @@
-#include "ToolExampleEditor/ToolExampleEditor.h"
 #include "ExampleDataTypeActions.h"
-#include "CustomDataType/ExampleData.h"
+#include "ToolExampleEditor/ToolExampleEditor.h"
+#include "ToolExample/CustomDataType/ExampleData.h"
 
 
 FExampleDataTypeActions::FExampleDataTypeActions(EAssetTypeCategories::Type InAssetCategory)

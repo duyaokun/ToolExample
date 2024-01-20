@@ -1,7 +1,7 @@
 #pragma once
 
-#include "SDockTab.h"
-#include "SlateApplication.h"
+#include "Widgets/Docking/SDockTab.h"
+#include "Framework/Application/SlateApplication.h"
 #include "TabTool.h"
 
 class TabToolPanel : public SCompoundWidget
