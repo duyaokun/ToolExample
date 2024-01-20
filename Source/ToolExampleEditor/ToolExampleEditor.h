@@ -2,12 +2,11 @@
 
 #pragma once
 
-#include "UnrealEd.h"
-#include "SlateExtras.h"
 #include "Editor/LevelEditor/Public/LevelEditor.h"
 #include "IAssetTypeActions.h"
-
 #include "IExampleModuleInterface.h"
+#include "SlateExtras.h"
+#include "UnrealEd.h"
 
 #if ENGINE_MAJOR_VERSION < 5
 typedef FEditorStyle FAppStyle;
@@ -29,7 +28,7 @@ public:
 	*
 	* @return Returns singleton instance, loading the module on demand if needed
 	*/
-	static inline FToolExampleEditor& Get()
+	static FToolExampleEditor& Get()
 	{
 		return FModuleManager::LoadModuleChecked< FToolExampleEditor >("ToolExampleEditor");
 	}
@@ -39,7 +38,7 @@ public:
 	*
 	* @return True if the module is loaded and ready to use
 	*/
-	static inline bool IsAvailable()
+	static bool IsAvailable()
 	{
 		return FModuleManager::Get().IsModuleLoaded("ToolExampleEditor");
 	}

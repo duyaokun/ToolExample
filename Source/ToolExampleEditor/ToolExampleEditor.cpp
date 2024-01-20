@@ -1,18 +1,16 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "ToolExampleEditor.h"
+#include "CustomDataType/ExampleDataTypeActions.h"
+#include "CustomProjectSettings/ExampleSettings.h"
+#include "Developer/Settings/Public/ISettingsContainer.h"
+#include "Editor/PropertyEditor/Public/PropertyEditing.h"
+#include "EditorMode/ExampleEdModeTool.h"
+#include "ISettingsModule.h"
 #include "MenuTool/MenuTool.h"
 #include "TabTool/TabTool.h"
-#include "EditorMode/ExampleEdModeTool.h"
-
 #include "ToolExample/DetailsCustomization/ExampleActor.h"
 #include "ToolExampleEditor/DetailsCustomization/ExampleActorDetails.h"
-
-#include "CustomDataType/ExampleDataTypeActions.h"
-
-#include "ISettingsModule.h"
-#include "Developer/Settings/Public/ISettingsContainer.h"
-#include "CustomProjectSettings/ExampleSettings.h"
 
 IMPLEMENT_GAME_MODULE(FToolExampleEditor, ToolExampleEditor)
 
