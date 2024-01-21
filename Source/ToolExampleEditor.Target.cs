@@ -10,6 +10,7 @@ public class ToolExampleEditorTarget : TargetRules
 		Type = TargetType.Editor;
 #if UE_5_2_OR_LATER
 		DefaultBuildSettings = BuildSettingsVersion.V3;
+		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_2;
 #elif UE_4_24_OR_LATER
 		DefaultBuildSettings = BuildSettingsVersion.V2;
 #endif

@@ -19,7 +19,7 @@ public class ToolExampleEditor : ModuleRules
             }
 		);
 
-		PCHUsage = ModuleRules.PCHUsageMode.NoSharedPCHs;
+		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		PrivatePCHHeaderFile = "ToolExampleEditor.h";
 
 		PublicDependencyModuleNames.AddRange(
